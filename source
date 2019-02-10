@@ -1,0 +1,85 @@
+//Week 5
+//Amanda Thompson
+
+#include <iostream>
+using namespace std;
+
+class Animal
+  {
+	public:
+	Animal()
+	{
+		cout << "Animal constructor executing.\n"; 
+	}
+	
+	virtual ~Animal()
+	{ 
+		cout << "Animal destructor executing.\n"; 
+	}
+
+	void communicate() 
+	{
+		cout << "Speak." << endl;
+	}
+   };
+
+  class Dog : public Animal
+	{
+	public:
+	 Dog() : Animal()
+	 { 
+		 cout << "Dog constructor executing.\n"; 
+	 }
+	
+	~Dog()
+	{ 
+		cout << "Dog destructor executing.\n"; 
+	}
+
+	void communicate() 
+	{
+		cout << "Woof!" << endl;
+	}
+	 };
+
+  class Cat : public Animal
+  {
+  public:
+	  Cat() : Animal()
+	  {
+		  cout << "Cat constructor executing.\n";
+	  }
+	  ~Cat()
+	  {
+		  cout << "Cat destructor executing.\n";
+	  }
+
+	  void communicate() 
+	  {
+		  cout << "Meow!" << endl;
+	  }
+  };
+	
+	 
+
+int main()
+{
+Animal *myAnimal = new Dog;
+	delete myAnimal;
+			
+Animal *myAnimalTwo = new Cat;
+	delete myAnimalTwo;
+
+Animal myOtherAnimal;
+	myOtherAnimal.communicate();
+
+Dog Caesar;
+	Caesar.communicate();
+
+Cat Alfie;
+	Alfie.communicate();
+
+system("pause");
+
+return 0;
+}
